@@ -14,11 +14,11 @@ public class DetruireObjetTrigger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Vérifiez si l'objet avec lequel il y a collision a un tag spécifique (par exemple, "Trigger")
-        if (collision.CompareTag("Trigger"))
-        {
+        //if (collision.CompareTag("Trigger"))
+        //{
             // Détruisez l'objet actuel (le GameObject auquel ce script est attaché) après un délai
-            Destroy(gameObject, delaiDestruction);
-        }
+           //Destroy(gameObject, delaiDestruction);
+        //}
     }
 }
 
