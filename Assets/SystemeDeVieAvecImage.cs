@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SystemeDeVieAvecImage : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SystemeDeVieAvecImage : MonoBehaviour
     public Sprite viePleine; // Sprite représentant une vie pleine
     public Sprite vieVide; // Sprite représentant une vie vide
     public GameObject boutonReessayer; // Référence au bouton à activer
+    public float delay = 5f; // Temps en secondes avant de recharger la scène
 
     void Start()
     {
@@ -65,7 +67,11 @@ public class SystemeDeVieAvecImage : MonoBehaviour
     {
         Debug.Log("Le joueur est mort !");
         boutonReessayer.SetActive(true); // Activer le bouton lorsque le joueur meurt
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
 }
 
