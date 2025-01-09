@@ -1,9 +1,16 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SuivreJoueur : MonoBehaviour
 {
     public Transform joueur; // Référence au joueur
     public float vitesse = 2.0f; // Vitesse de suivi
+
+    void Awake()
+    {
+        joueur = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Update()
     {
