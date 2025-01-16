@@ -11,12 +11,14 @@ public class SystemeDeVieAvecImage : MonoBehaviour
     public Sprite vieVide; // Sprite représentant une vie vide
     public GameObject boutonReessayer; // Référence au bouton à activer
     public float delay = 5f; // Temps en secondes avant de recharger la scène
+    public AudioSource audiosource;
 
     void Start()
     {
         vieCourante = vieMax;
         MettreAJourAffichageVie();
         boutonReessayer.SetActive(false); // Désactiver le bouton au départ
+        audiosource = GetComponent<AudioSource>();
     }
 
     // Méthode pour infliger des dégâts
@@ -26,6 +28,7 @@ public class SystemeDeVieAvecImage : MonoBehaviour
         if (vieCourante < 0)
         {
             vieCourante = 0;
+            audiosource.Play();
         }
         MettreAJourAffichageVie();
 
@@ -71,7 +74,7 @@ public class SystemeDeVieAvecImage : MonoBehaviour
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
