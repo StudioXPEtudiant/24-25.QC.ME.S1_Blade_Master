@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2011593191498244156}
   - component: {fileID: -4628961067037736830}
   - component: {fileID: 4829263383367346462}
+  - component: {fileID: -4886208190504994807}
   m_Layer: 0
   m_Name: GhostMonster
   m_TagString: Untagged
@@ -160,7 +161,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0061718225, y: 0.0015429445}
@@ -176,3 +177,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.19656348, y: 0.19347811}
   m_EdgeRadius: 0
+--- !u!114 &-4886208190504994807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556694959077476920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852965002bc419c46957439bad65c910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quantiteDegat: 1
