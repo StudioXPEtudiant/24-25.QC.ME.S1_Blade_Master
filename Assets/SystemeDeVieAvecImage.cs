@@ -12,6 +12,8 @@ public class SystemeDeVieAvecImage : MonoBehaviour
     public GameObject boutonReessayer; // Référence au bouton à activer
     public float delay = 5f; // Temps en secondes avant de recharger la scène
     public AudioSource audiosource;
+    public GameObject boutonQuitter;
+    public GameObject joueurDesactivation;
 
     void Start()
     {
@@ -70,11 +72,17 @@ public class SystemeDeVieAvecImage : MonoBehaviour
     {
         Debug.Log("Le joueur est mort !");
         boutonReessayer.SetActive(true); // Activer le bouton lorsque le joueur meurt
+        boutonQuitter.SetActive(true);
+        joueurDesactivation.SetActive(false);
+        // Exemple de code pour arrêter toutes les fonctions
+        // Vous pouvez arrêter les animations, sons, etc.
+        Time.timeScale = 0; // Mettre en pause le jeu
+        Debug.Log("Toutes les fonctions sont arrêtées !");
         //Destroy(gameObject);
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //string currentSceneName = SceneManager.GetActiveScene().name;
+        //SceneManager.LoadScene(currentSceneName);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
